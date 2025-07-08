@@ -1,0 +1,64 @@
+---
+import type { WorkExperienceType } from "../types/WorkExperience.type";
+import BisaLogo from "../assets/bisa.svg";
+import AgeticLogo from "../assets/agetic.svg";
+import SedalpLogo from "../assets/sedalp.svg";
+import List from "../components/atoms/List.astro";
+import ContentExperience from "../components/atoms/ContentExperience.astro";
+const experiences: WorkExperienceType[] = [
+  {
+    place: "",
+    acronym: "Bisa Bank",
+    description: "In this place",
+    duration: "Feb 02 to Jun 31, 2025",
+    logo: BisaLogo,
+  },
+  {
+    place:
+      "Agency for Electronic Government and Information and Communication Technologies",
+    acronym: "AGETIC",
+    description: "In this place I worked",
+    duration: "Feb 02 to Dec 20, 2024",
+    logo: AgeticLogo,
+  },
+  {
+    place: "Departmental Service of Autonomies of La Paz",
+    acronym: "SEDALP",
+    description: "I developed",
+    duration: "Jun 15 to Dec 20, 2023",
+    logo: SedalpLogo,
+  },
+];
+---
+
+<section class="min-h-screen bg-[#666F5C] px-100">
+  <h2 class="mb-20 text-center text-3xl">Work Experience</h2>
+  <div class="flex flex-row items-start">
+    <div
+      class="sticky top-0 flex w-4/12 flex-col justify-start border-l-4 border-solid p-2"
+    >
+      {
+        experiences.map(({ logo, acronym }) => {
+          return <List logo={logo} place={acronym} targetId={acronym} />;
+        })
+      }
+    </div>
+    <div class="w-8/12">
+      {
+        experiences.map(({ duration, place, acronym, description }) => {
+          return (
+            <div class="p-4">
+              <ContentExperience
+                duration={duration}
+                place={place}
+                acronym={acronym}
+                description={description}
+                targetId={acronym}
+              />
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+</section>

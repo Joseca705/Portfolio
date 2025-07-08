@@ -1,0 +1,24 @@
+---
+interface Props {
+  place: string;
+  acronym: string;
+  duration: string;
+  description: string;
+  targetId: string;
+}
+
+const { place, acronym, duration, description, targetId } = Astro.props;
+---
+
+<div id={targetId} class="flex min-h-[400px] flex-col">
+  <div>
+    <h2 class="text-right">{duration}</h2>
+  </div>
+  <div>
+    <h2>{`${place} ${acronym}`}</h2>
+  </div>
+  <div class="mx-2 h-[4px] w-full bg-black"></div>
+  <div>
+    <p>{description}</p>
+  </div>
+</div>

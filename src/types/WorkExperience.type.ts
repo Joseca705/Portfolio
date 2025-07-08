@@ -6,4 +6,10 @@ export interface WorkExperienceType {
   description: string;
   duration: string;
   logo: AstroComponentFactory;
+  projects: ProjectInteface[];
+}
+
+interface ProjectInteface {
+  name: string;
+  description: string;
 }

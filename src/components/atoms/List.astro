@@ -1,23 +1,15 @@
 ---
-import type { AstroComponentFactory } from "astro/runtime/server/index.js";
-
 interface Props {
-  logo: AstroComponentFactory;
   place: string;
   targetId: string;
 }
 
-const { place, logo: Logo, targetId } = Astro.props;
+const { place, targetId } = Astro.props;
 ---
 
 <div
-  class="flex h-[100px] w-full cursor-pointer flex-row"
+  class="my-4 flex h-[50px] w-full cursor-pointer flex-row items-center px-10"
   onclick={`document.getElementById('${targetId}')?.scrollIntoView({ behavior: 'smooth' })`}
 >
-  <div class="w-4/12">
-    <Logo class="h-full w-full" />
-  </div>
-  <div class="m-auto w-8/12 p-2">
-    <h3 class="text-xl">{place}</h3>
-  </div>
+  <h3 class="text-xl">{place}</h3>
 </div>

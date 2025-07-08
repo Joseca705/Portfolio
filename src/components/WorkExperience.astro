@@ -9,24 +9,41 @@ const experiences: WorkExperienceType[] = [
   {
     place: "",
     acronym: "Bisa Bank",
-    description: "In this place",
+    description:
+      "My team and I were in charge of automating critical core banking processes to streamline and improve the migration of legacy systems. I performed manual testing on maintenance developments implemented by other developers to ensure functionality and adherence to requirements.",
     duration: "Feb 02 to Jun 31, 2025",
     logo: BisaLogo,
+    projects: [{ name: "", description: "" }],
   },
   {
     place:
       "Agency for Electronic Government and Information and Communication Technologies",
     acronym: "AGETIC",
-    description: "In this place I worked",
+    description:
+      "During my stay at AGETIC I played roles as a Full-Stack Developer, pentester of systems in development, system performance tester, database performance optimizer and researcher of technologies to automate deployments.",
     duration: "Feb 02 to Dec 20, 2024",
     logo: AgeticLogo,
+    projects: [
+      {
+        name: "Event Management System",
+        description:
+          "contributed to the development of an event management system that allows users to create and organize meetings and events, invite guests, and assign roles based on event type. The system includes features for tracking attendance and generating detailed attendance statistics.",
+      },
+      {
+        name: "Statistical Log System",
+        description:
+          "As part of a larger service-sharing platform, I developed a statistical log system that processes consumption logs. This system provides insights of service usage, enabling the identification of patterns and trends for both consumers and publishers.",
+      },
+    ],
   },
   {
     place: "Departmental Service of Autonomies of La Paz",
     acronym: "SEDALP",
-    description: "I developed",
+    description:
+      "As a Software Developer, I was responsible for leading the end-to-end development and deployment of a Geographic Information System (GIS) aimed at improving territorial control and administrative efficiency for local municipalities. This involved designing scalable backend services, implementing intuitive user interfaces for geographic visualization, and ensuring seamless integration with existing municipal data systems. The project significantly enhanced data-driven decision-making and resource allocation at the local government level.",
     duration: "Jun 15 to Dec 20, 2023",
     logo: SedalpLogo,
+    projects: [{ name: "", description: "" }],
   },
 ];
 ---
@@ -34,26 +51,26 @@ const experiences: WorkExperienceType[] = [
 <section class="min-h-screen bg-[#666F5C] px-100">
   <h2 class="mb-20 text-center text-3xl">Work Experience</h2>
   <div class="flex flex-row items-start">
-    <div
-      class="sticky top-0 flex w-4/12 flex-col justify-start border-l-4 border-solid p-2"
-    >
+    <div class="sticky top-0 flex w-4/12 flex-col justify-start p-2">
       {
-        experiences.map(({ logo, acronym }) => {
-          return <List logo={logo} place={acronym} targetId={acronym} />;
+        experiences.map(({ acronym }) => {
+          return <List place={acronym} targetId={acronym} />;
         })
       }
     </div>
     <div class="w-8/12">
       {
-        experiences.map(({ duration, place, acronym, description }) => {
+        experiences.map(({ logo, duration, place, acronym, description, projects }) => {
           return (
             <div class="p-4">
               <ContentExperience
+                logo={logo}
                 duration={duration}
                 place={place}
                 acronym={acronym}
                 description={description}
                 targetId={acronym}
+                projects={projects}
               />
             </div>
           );

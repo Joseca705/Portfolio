@@ -1,17 +1,37 @@
 ---
+import type { AstroComponentFactory } from "astro/runtime/server/index.js";
+
+interface Project {
+  name: string;
+  description: string;
+}
+
 interface Props {
+  logo: AstroComponentFactory;
   place: string;
   acronym: string;
   duration: string;
   description: string;
   targetId: string;
+  projects?: Project[];
 }
 
-const { place, acronym, duration, description, targetId } = Astro.props;
+const {
+  logo: Logo,
+  place,
+  acronym,
+  duration,
+  description,
+  targetId,
+  projects = [],
+} = Astro.props;
 ---
 
 <div id={targetId} class="flex min-h-[400px] flex-col">
-  <div>
+  <div class="flex flex-row items-center justify-between">
+    <div class="h-25 w-25">
+      <Logo class="h-full w-full" />
+    </div>
     <h2 class="text-right">{duration}</h2>
   </div>
   <div>
@@ -21,4 +41,17 @@ const { place, acronym, duration, description, targetId } = Astro.props;
   <div>
     <p>{description}</p>
   </div>
+  {Array.isArray(projects) && projects.length > 0 && (
+    <div>
+      <h4>Projects:</h4>
+      <ul>
+        {projects.map(({ name, description }) => (
+          <li>
+            {name && <strong>{name}: </strong>}
+            {description}
+          </li>
+        ))}
+      </ul>
+    </div>
+  )}
 </div>

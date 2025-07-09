@@ -1,5 +1,27 @@
+---
+import Button from "./atoms/Button.astro";
+import { Image } from "astro:assets";
+import attendanceImage from "../assets/attendance.png";
+---
+
 <section id="projects" class="min-h-screen bg-[#666F5C] px-100">
-  <h2 class="mb-20 text-center text-5xl underline">Project</h2>
-  <h3 class="text-2xl">Attendance System</h3>
-  <p>This system was developed to solve the problem</p>
+  <h2 class="mb-20 text-center text-5xl underline">Projects</h2>
+  <h3 class="mb-10 text-2xl font-black">Attendance System</h3>
+  <p>
+    I developed a robust Attendance System backend designed to handle real-time
+    attendance tracking through RabbitMQ. Multiple client applications connect
+    to a central exchange, sending timestamped attendance records via message
+    queues. The backend not only processes and stores these records efficiently
+    but also maintains detailed control over each employee’s status, including
+    their current location, assigned manager, and job role. This architecture
+    ensures scalability, accurate data synchronization, and centralized
+    workforce monitoring across distributed environments.
+  </p>
+  <div class="mt-10 flex justify-end gap-5">
+    <Button name="Github Project" />
+    <Button name="Link to demo" />
+  </div>
+  <div class="flex justify-center py-10">
+    <Image src={attendanceImage} alt="Attendance System" width={800} />
+  </div>
 </section>

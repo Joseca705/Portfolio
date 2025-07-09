@@ -1,10 +1,11 @@
 ---
 interface Props {
   name: string;
+  href?: string;
 }
-const { name } = Astro.props;
+const { name, href = "#" } = Astro.props;
 ---
 
-<a class="rounded-full border-4 border-black bg-[#EBC9AE] p-2" href="#"
+<a class="rounded-full border-4 border-black bg-[#EBC9AE] p-2" href={href}
   >{name}</a
 >

@@ -1,6 +1,7 @@
 ---
 import "../styles/global.css";
 import Navbar from "../layouts/Navbar.astro";
+import Footer from "../layouts/Footer.astro";
 ---
 
 <!doctype html>
@@ -10,11 +11,12 @@ import Navbar from "../layouts/Navbar.astro";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro Basics</title>
+    <title>JC Portfolio</title>
   </head>
   <body>
     <Navbar />
     <slot />
+    <Footer />
   </body>
 </html>
 

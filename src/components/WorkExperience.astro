@@ -48,10 +48,10 @@ const experiences: WorkExperienceType[] = [
 ];
 ---
 
-<section class="min-h-screen bg-[#666F5C] px-100">
-  <h2 class="mb-20 text-center text-3xl">Work Experience</h2>
+<section id="experience" class="min-h-screen bg-[#666F5C] px-100">
+  <h2 class="mb-20 text-center text-5xl underline">Work Experience</h2>
   <div class="flex flex-row items-start">
-    <div class="sticky top-0 flex w-4/12 flex-col justify-start p-2">
+    <div class="sticky top-20 flex w-4/12 flex-col justify-start p-2">
       {
         experiences.map(({ acronym }) => {
           return <List place={acronym} targetId={acronym} />;
@@ -60,21 +60,23 @@ const experiences: WorkExperienceType[] = [
     </div>
     <div class="w-8/12">
       {
-        experiences.map(({ logo, duration, place, acronym, description, projects }) => {
-          return (
-            <div class="p-4">
-              <ContentExperience
-                logo={logo}
-                duration={duration}
-                place={place}
-                acronym={acronym}
-                description={description}
-                targetId={acronym}
-                projects={projects}
-              />
-            </div>
-          );
-        })
+        experiences.map(
+          ({ logo, duration, place, acronym, description, projects }) => {
+            return (
+              <div class="p-4">
+                <ContentExperience
+                  logo={logo}
+                  duration={duration}
+                  place={place}
+                  acronym={acronym}
+                  description={description}
+                  targetId={acronym}
+                  projects={projects}
+                />
+              </div>
+            );
+          },
+        )
       }
     </div>
   </div>

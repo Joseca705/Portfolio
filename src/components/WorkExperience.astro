@@ -11,7 +11,7 @@ const experiences: WorkExperienceType[] = [
     acronym: "Bisa Bank",
     description:
       "My team and I were in charge of automating critical core banking processes to streamline and improve the migration of legacy systems. I performed manual testing on maintenance developments implemented by other developers to ensure functionality and adherence to requirements.",
-    duration: "Feb 02 to Jun 31, 2025",
+    duration: "Feb - Jun, 2025",
     logo: BisaLogo,
     projects: [{ name: "", description: "" }],
   },
@@ -21,7 +21,7 @@ const experiences: WorkExperienceType[] = [
     acronym: "AGETIC",
     description:
       "During my stay at AGETIC I played roles as a Full-Stack Developer, pentester of systems in development, system performance tester, database performance optimizer and researcher of technologies to automate deployments.",
-    duration: "Feb 02 to Dec 20, 2024",
+    duration: "Jan - Dec, 2024",
     logo: AgeticLogo,
     projects: [
       {
@@ -41,17 +41,19 @@ const experiences: WorkExperienceType[] = [
     acronym: "SEDALP",
     description:
       "As a Software Developer, I was responsible for leading the end-to-end development and deployment of a Geographic Information System (GIS) aimed at improving territorial control and administrative efficiency for local municipalities. This involved designing scalable backend services, implementing intuitive user interfaces for geographic visualization, and ensuring seamless integration with existing municipal data systems. The project significantly enhanced data-driven decision-making and resource allocation at the local government level.",
-    duration: "Jun 15 to Dec 20, 2023",
+    duration: "Jun - Dec, 2023",
     logo: SedalpLogo,
     projects: [{ name: "", description: "" }],
   },
 ];
 ---
 
-<section id="experience" class="min-h-screen bg-[#666F5C] px-100">
+<section id="experience" class="min-h-screen bg-[#666F5C] px-100 pb-10">
   <h2 class="mb-20 text-center text-5xl underline">Work Experience</h2>
   <div class="flex flex-row items-start">
-    <div class="sticky top-20 flex w-4/12 flex-col justify-start p-2">
+    <div
+      class="sticky top-20 flex w-4/12 flex-col justify-start border-l-4 p-2"
+    >
       {
         experiences.map(({ acronym }) => {
           return <List place={acronym} targetId={acronym} />;

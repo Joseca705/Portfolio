@@ -1,0 +1,121 @@
+---
+import Image from "astro/components/Image.astro";
+import SpringLogo from "../assets/spring-logo.png";
+import JavaLogo from "../assets/java-logo.png";
+import PostgreSQLLogo from "../assets/postgreSQL-logo.png";
+import DockerLogo from "../assets/docker-logo.png";
+import RabbitMQLogo from "../assets/rabbitmq-logo.png";
+import GitlabLogo from "../assets/gitlab-logo.png";
+import DevopsLogo from "../assets/devops-logo.png";
+---
+
+<section id="aboutme" class="bg-[#666F5C] px-100 pb-10">
+  <h2 class="mb-20 text-center text-5xl underline">About me</h2>
+  <div class="flex flex-row items-start bg-[#BB9583] p-10">
+    <div class="w-1/2 p-5">
+      <p>
+        I am a Systems Engineer gratuated from Public University of El Alto,
+        with experience developing backend services made with Java, Spring Boot
+        in most cases
+      </p>
+    </div>
+    <div class="w-1/2 p-5">
+      <h3 class="text-2xl font-semibold">Technologies</h3>
+      <style>
+        .tooltip {
+          position: relative;
+          display: inline-block;
+          margin-right: 12px;
+        }
+        .tooltip .tooltip-text {
+          visibility: hidden;
+          width: max-content;
+          background-color: #333;
+          color: #fff;
+          text-align: center;
+          border-radius: 6px;
+          padding: 6px 10px;
+          position: absolute;
+          z-index: 1;
+          bottom: 110%;
+          left: 50%;
+          transform: translateX(-50%);
+          opacity: 0;
+          transition: opacity 0.1s;
+          font-size: 0.95rem;
+          pointer-events: none;
+          white-space: nowrap;
+        }
+        .tooltip:hover .tooltip-text {
+          visibility: visible;
+          opacity: 1;
+        }
+      </style>
+      <div class="flex w-full flex-row flex-wrap">
+        <div class="w-1/3 flex justify-center items-center">
+          <span class="tooltip">
+            <Image src={SpringLogo} alt="Spring Logo" width="80" height="80" />
+            <span class="tooltip-text">Spring</span>
+          </span>
+        </div>
+
+        <div class="w-1/3 flex justify-center items-center">
+          <span class="tooltip">
+            <Image src={JavaLogo} alt="Java Logo" width="150" height="150" />
+            <span class="tooltip-text">Java</span>
+          </span>
+        </div>
+
+        <div class="w-1/3 flex justify-center items-center">
+          <span class="tooltip">
+            <Image
+              src={PostgreSQLLogo}
+              alt="PostgreSQL Logo"
+              width="150"
+              height="150"
+            />
+            <span class="tooltip-text">PostgreSQL</span>
+          </span>
+        </div>
+
+        <div class="w-1/3 flex justify-center items-center">
+          <span class="tooltip">
+            <Image
+              src={DockerLogo}
+              alt="Docker Logo"
+              width="150"
+              height="150"
+            />
+            <span class="tooltip-text">Docker</span>
+          </span>
+        </div>
+
+        <div class="w-1/3 flex justify-center items-center">
+          <span class="tooltip">
+            <Image
+              src={RabbitMQLogo}
+              alt="RabbitMQ Logo"
+              width="70"
+              height="70"
+            />
+            <span class="tooltip-text">RabbitMQ</span>
+          </span>
+        </div>
+
+        <div class="w-1/3 flex justify-center items-center">
+          <span class="tooltip">
+            <Image src={GitlabLogo} alt="Gitlab Logo" width="80" height="80" />
+            <span class="tooltip-text">Gitlab pipelines</span>
+          </span>
+        </div>
+
+        <div class="w-full flex justify-center items-center">
+          <span class="tooltip">
+            <Image src={DevopsLogo} alt="Devops Logo" width="150" height="150" />
+            <span class="tooltip-text">DevOps</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

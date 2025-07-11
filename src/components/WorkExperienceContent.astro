@@ -8,7 +8,7 @@ const { experiences } = Astro.props;
 <div class="flex flex-row items-start">
   <div class="sticky top-20 flex w-4/12 flex-col justify-start border-l-4 p-2">
     {
-      experiences.map(({ acronym }) => {
+      experiences.map(({ acronym }: WorkExperienceType) => {
         return <List place={acronym} targetId={acronym} />;
       })
     }
@@ -16,7 +16,14 @@ const { experiences } = Astro.props;
   <div class="w-8/12">
     {
       experiences.map(
-        ({ logo, duration, place, acronym, description, projects }) => {
+        ({
+          logo,
+          duration,
+          place,
+          acronym,
+          description,
+          projects,
+        }: WorkExperienceType) => {
           return (
             <div class="p-4">
               <ContentExperience

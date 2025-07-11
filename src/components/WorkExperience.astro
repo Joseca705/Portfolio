@@ -3,7 +3,7 @@ import type { WorkExperienceType } from "../types/WorkExperience.type";
 import BisaLogo from "../assets/bisa.svg";
 import AgeticLogo from "../assets/agetic.svg";
 import SedalpLogo from "../assets/sedalp.svg";
-import List from "../components/atoms/List.astro";
+import WorkExperienceContent from "../components/WorkExperienceContent.astro";
 import ContentExperience from "../components/atoms/ContentExperience.astro";
 const experiences: WorkExperienceType[] = [
   {
@@ -48,38 +48,26 @@ const experiences: WorkExperienceType[] = [
 ];
 ---
 
-<section id="experience" class="min-h-screen bg-[#666F5C] px-100 pb-10">
+<section id="experience" class="min-h-screen bg-[#666F5C] px-4 pb-10 md:px-100">
   <h2 class="mb-20 text-center text-5xl underline">Work Experience</h2>
-  <div class="flex flex-row items-start">
-    <div
-      class="sticky top-20 flex w-4/12 flex-col justify-start border-l-4 p-2"
-    >
-      {
-        experiences.map(({ acronym }) => {
-          return <List place={acronym} targetId={acronym} />;
-        })
-      }
-    </div>
-    <div class="w-8/12">
-      {
-        experiences.map(
-          ({ logo, duration, place, acronym, description, projects }) => {
-            return (
-              <div class="p-4">
-                <ContentExperience
-                  logo={logo}
-                  duration={duration}
-                  place={place}
-                  acronym={acronym}
-                  description={description}
-                  targetId={acronym}
-                  projects={projects}
-                />
-              </div>
-            );
-          },
-        )
-      }
+  <!-- Desktop: show full content -->
+  <div class="hidden md:block">
+    <WorkExperienceContent experiences={experiences} />
+  </div>
+  <!-- Mobile: show all experiences -->
+  <div class="block md:hidden">
+    <div class="space-y-8">
+      {experiences.map(({ logo, duration, place, acronym, description, projects }) => (
+        <ContentExperience
+          logo={logo}
+          duration={duration}
+          place={place}
+          acronym={acronym}
+          description={description}
+          targetId={acronym}
+          projects={projects}
+        />
+      ))}
     </div>
   </div>
 </section>

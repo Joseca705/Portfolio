@@ -22,12 +22,61 @@ import attendanceImage from "../assets/attendance.png";
       synchronization, and centralized workforce monitoring across distributed
       environments.
     </p>
-    <div class="mt-10 flex justify-end gap-5">
-      <Button name="Github Project" />
-      <Button name="Link to demo" />
+    <div class="mt-10 flex justify-end">
+      <Button
+        name="Github Project"
+        href="https://github.com/Joseca705/Attendance-System"
+      />
     </div>
     <div class="flex w-full justify-center py-10">
       <Image src={attendanceImage} alt="Attendance System" height={400} />
+    </div>
+  </div>
+  <div class="mt-5 bg-[#BB9583] p-15">
+    <h3 class="mb-10 text-2xl font-black">
+      Neighborhood Store (Microservices)
+    </h3>
+    <p>
+      I developed a robust Attendance System backend designed to handle
+      real-time attendance tracking through RabbitMQ. Multiple client
+      applications connect to a central exchange, sending timestamped attendance
+      records via message queues. The backend not only processes and stores
+      these records efficiently but also maintains detailed control over each
+      employee’s status, including their current location, assigned manager, and
+      job role. This architecture ensures scalability, accurate data
+      synchronization, and centralized workforce monitoring across distributed
+      environments.
+    </p>
+    <div class="mt-10 flex flex-col">
+      <h3>Links to repos</h3>
+      <ul class="ml-10 list-disc underline">
+        <li>
+          <a href="https://github.com/Joseca705/msvc-users" target="_blank"
+            >Users</a
+          >
+        </li>
+        <li>
+          <a href="https://github.com/Joseca705/Msvc-kardex" target="_blank"
+            >Kardex</a
+          >
+        </li>
+        <li>
+          <a href="https://github.com/Joseca705/Msvc-store" target="_blank"
+            >Store</a
+          >
+        </li>
+        <li>
+          <a href="https://github.com/Joseca705/Msvc-sales" target="_blank"
+            >Sales</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://github.com/Joseca705/Msvc-oauth2-server"
+            target="_blank">Oauth-2</a
+          >
+        </li>
+      </ul>
     </div>
   </div>
 </section>
